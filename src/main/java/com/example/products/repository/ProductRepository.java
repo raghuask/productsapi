@@ -28,6 +28,8 @@ public class ProductRepository {
         this.mongoTemplate = mongoTemplate;
     }
 
+    /*Get product price details from the DB for a product*/
+
     public Product getProductDetails(Integer id) {
 
        Query query = new Query(Criteria.where(Constants.PRODUCTID).is(id));
@@ -35,6 +37,7 @@ public class ProductRepository {
 
     }
 
+    /*Save product price details to the DB for a product*/
     public void saveProductPrice(double value, String currencyCode, Integer id){
 
         Update update = new Update();
