@@ -42,14 +42,14 @@ Running the API:
   **GET METHOD**
   - Start the API in the IDE
   - Open a Rest Client
-  - Hit the URL: http://localhost:<port no that has been assigned>/products/{id}
+  - Hit the URL: http://localhost:< port no that has been assigned >/products/{id}
   
   Example ids - 13860428, 15117729, 16696652
   
 **PUT METHOD**
   - Start the API in the IDE
   - Open a Rest Client
-  - Hit the URL: http://localhost:<port no that has been assigned>/products/{id}
+  - Hit the URL: http://localhost:< port no that has been assigned >/products/{id}
   
   Example ids - 13860428, 15117729, 16696652
   Example RequestBody - {"value":1500.00, "currencyCode":"INR"}
