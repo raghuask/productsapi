@@ -7,6 +7,7 @@ import com.example.products.service.ProductService;
 import com.example.products.wrapper.ResponseWrapper;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -33,6 +34,8 @@ public class ProductServiceTest {
     public void setup(){
         reset(mockProductRepository);
         productService.setProductRepository(mockProductRepository);
+        ReflectionTestUtils.setField(productService, "itemServiceUrl", "https://api.target.com/products/v3/");
+        ReflectionTestUtils.setField(productService, "itemServiceKey", "?fields=descriptions&id_type=TCIN&key=43cJWpLjH8Z8oR18KdrZDBKAgLLQKJjz");
     }
 
     @Test
