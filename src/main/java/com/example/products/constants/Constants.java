@@ -25,7 +25,6 @@ public final class Constants {
     public static final String DESCRIPTION_UNAVAILABLE = "Product description is not available at this moment";
     public static final String NOT_VALID_PRODUCT = "Not valid product in system";
     public static final String PACKAGES = "com.example.products";
-    public static final String LOCALHOST = "127.0.0.1";
     public static final String STRINGREGEX = "^[ A-Za-z0-9]*$";
 
     private Constants(){}

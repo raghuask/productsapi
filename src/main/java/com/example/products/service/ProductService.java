@@ -8,6 +8,8 @@ import com.example.products.wrapper.ResponseWrapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -21,8 +23,14 @@ import java.util.Map;
  * Created by a036862 on 7/21/16.
  */
 @Service
+@PropertySource("classpath:config.properties")
 public class ProductService {
 
+    @Value("${itemService.url}")
+    private String itemServiceUrl;
+
+    @Value("${itemService.key}")
+    private String itemServiceKey;
 
     @Autowired
     private ProductRepository productRepository;
@@ -62,7 +70,7 @@ public class ProductService {
     /*This method gets Product name from the Item service*/
     public ResponseEntity<String> getProductName(Integer id){
 
-        String serviceUrl = "https://api.target.com/products/v3/"+id+"?fields=descriptions&id_type=TCIN&key=43cJWpLjH8Z8oR18KdrZDBKAgLLQKJjz";
+        String serviceUrl = itemServiceUrl+id+itemServiceKey;
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
