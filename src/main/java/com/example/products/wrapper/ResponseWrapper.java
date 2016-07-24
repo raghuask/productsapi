@@ -1,6 +1,5 @@
 package com.example.products.wrapper;
 
-import java.util.List;
 import java.util.Map;
 
 /**

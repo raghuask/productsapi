@@ -2,7 +2,7 @@ package com.example.products.rest;
 
 import com.example.products.constants.Constants;
 import com.example.products.domain.Product;
-import com.example.products.exceptionHandler.ExceptionHandler;
+import com.example.products.exceptionhandler.ExceptionHandler;
 import com.example.products.service.ProductService;
 import com.example.products.wrapper.ResponseWrapper;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -33,7 +33,7 @@ public class ProductContoller {
     /* This API gets the product details for a give Product ID*/
 
     @RequestMapping(value = Constants.GET_PRODUCT_BY_ID, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getProductDetails(@PathVariable (Constants.ID) Integer id) {
+    public ResponseEntity<String> getProductDetails(@PathVariable (Constants.ID) Integer id) {
         try {
             ResponseWrapper result = productService.getProductDetails(id);
             ObjectMapper mapper = new ObjectMapper().configure(SerializationFeature.WRITE_NULL_MAP_VALUES, false);
@@ -42,14 +42,14 @@ public class ProductContoller {
         }
         catch (Exception e) {
             logger.error(Constants.EXCEPTION + e);
-            return ExceptionHandler.handleException(e);
+            return ExceptionHandler.handleException();
         }
     }
 
     /* This API save the product price for a given Product ID*/
 
     @RequestMapping(value = Constants.SAVE_PRODUCT_PRICE, method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> saveProduct(@PathVariable (Constants.ID) Integer id, @Valid @RequestBody Product product) {
+    public ResponseEntity<String> saveProduct(@PathVariable (Constants.ID) Integer id, @Valid @RequestBody Product product) {
         try {
             productService.saveProductPrice(id, product);
             JsonObject jsonObject = new JsonObject();
@@ -58,7 +58,7 @@ public class ProductContoller {
         }
         catch (Exception e) {
             logger.error(Constants.EXCEPTION + e);
-            return ExceptionHandler.handleException(e);
+            return ExceptionHandler.handleException();
         }
     }
 

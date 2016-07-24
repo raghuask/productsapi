@@ -2,18 +2,12 @@ package com.example.products.repository;
 
 import com.example.products.constants.Constants;
 import com.example.products.domain.Product;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
-
-import java.net.UnknownHostException;
 
 /**
  * Created by a036862 on 7/21/16.

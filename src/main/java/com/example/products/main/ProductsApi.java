@@ -14,7 +14,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class ProductsApi {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductsApi.class, args);
+        SpringApplication springApplication = new SpringApplication(ProductsApi.class);
+        springApplication.run(args);
     }
 
 }

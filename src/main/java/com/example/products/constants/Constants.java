@@ -5,7 +5,7 @@ package com.example.products.constants;
  */
 public final class Constants {
 
-    private Constants(){}
+
 
     public static final String GET_PRODUCT_BY_ID = "/products/{id}";
     public static final String ID = "id";
@@ -28,5 +28,5 @@ public final class Constants {
     public static final String LOCALHOST = "127.0.0.1";
     public static final String STRINGREGEX = "^[ A-Za-z0-9]*$";
 
-
+    private Constants(){}
 }

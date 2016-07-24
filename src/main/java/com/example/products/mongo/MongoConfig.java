@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import java.net.UnknownHostException;
+
 /**
  * Created by a036862 on 7/23/16.
  */
@@ -18,7 +20,7 @@ public class MongoConfig {
      *
      */
         @Bean
-        public MongoTemplate mongoTemplate() throws Exception {
+        public MongoTemplate mongoTemplate() throws UnknownHostException {
 
             return new MongoTemplate(new MongoClient(Constants.LOCALHOST), Constants.PRODUCT);
 

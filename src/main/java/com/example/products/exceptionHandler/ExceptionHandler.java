@@ -1,4 +1,4 @@
-package com.example.products.exceptionHandler;
+package com.example.products.exceptionhandler;
 
 import com.example.products.constants.Constants;
 import com.google.gson.JsonObject;
@@ -10,14 +10,14 @@ import org.springframework.http.ResponseEntity;
  */
 public final class ExceptionHandler {
 
-    private ExceptionHandler(){
+    private ExceptionHandler(){}
 
-    }
-
-    public static ResponseEntity<?> handleException(Exception e){
+    public static ResponseEntity<String> handleException(){
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty(Constants.MESSAGE,Constants.ERROR_MESSAGE);
         return new ResponseEntity<>(jsonObject.toString(), HttpStatus.SERVICE_UNAVAILABLE);
 
     }
+
+
 }
