@@ -14,7 +14,7 @@ Setting up the service
   - Clone the code from Github
   - Open the project in an IDE (Eclipse/Intellij)
   - Edit Run configuration and add a new Java application
-  - Assign a port on which service will be run
+  - Assign a port on which service will be run(Ex: -Dserver.port = 8099)
   
 Insert some data in MongoDB
 ---------------------------
